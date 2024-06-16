@@ -13,7 +13,7 @@ const io = require('socket.io')(server1,{
     }
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static('client'));
 app.use(bodyParser.json());
