@@ -5,9 +5,8 @@ const database = require('./database.js');
 
 const app = express();
 const server1 = require('http').createServer(app);
-const server2 = require('http').createServer();
 
-const io = require('socket.io')(server2,{
+const io = require('socket.io')(server1,{
     cors:{
         origin:["http://localhost:10000","https://localhost:10000","https://nhantintructuyen.onrender.com"],
         methods:["GET","POST"]
@@ -118,8 +117,8 @@ app.post('/chat',(req,res)=>{
     }
 });
 
-app.listen(10000,()=>console.log('server on!'));
-io.listen(10001);
+app.listen(PORT,()=>console.log('server on!'));
+
 io.on('connection',socket=>{
     console.log('client connected!');
     io.emit('update','reconnect')
