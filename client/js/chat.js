@@ -1,6 +1,6 @@
 import { add_panel_str, friend_str, chat_nav_str, other_message_str, self_message_str } from "../js/component.js";
 
-const socket = io();
+const socket = io('https://nhantintructuyen.onrender.com:10000');
 
 socket.on('connect',()=>{
     console.log('connected!');
