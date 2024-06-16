@@ -117,7 +117,7 @@ app.post('/chat',(req,res)=>{
     }
 });
 
-app.listen(PORT,()=>console.log('server on!'));
+server1.listen(PORT,()=>console.log(`server on! port:${PORT}`));
 
 io.on('connection',socket=>{
     console.log('client connected!');
