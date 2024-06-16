@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <aside class="left-sidebar">
+      <nav class="nav-top">
+      <section class="search-panel">
+        <input class="search-chat" placeholder="Tìm Kiếm" type="search">
+        <button class="search-btn"><span class="material-symbols-outlined">search</span></button>
+      </section>
+        <button class="close-sidebar"><span class="material-symbols-outlined">close</span></button>
+      </nav>
+      <section class="list-chat">
+        <nav class="nav-bottom">
+          <div class="list-add-panel">
+            <button title="thêm" class="list-add"><span class="material-symbols-outlined">add</span></button>
+          </div>
+            <!-- <button title="tùy chỉnh" class="list-setting"><span class="material-symbols-outlined">list</span></button> -->
+        </nav>
+        
+      </section>
+    </aside>
+    <section class="main">
+    <section class="sect1">
+      <div>
+      <button class="room-settings"><span class="material-symbols-outlined">menu</span></button>
+        <div>
+          <div data-room-name>...</div>
+          <div class="more-info">bấm xem thông tin</div>
+        </div>
+      </div>
+      <img class="profile" src="./assets/default.png" alt="profile">
+      <button class="login-btn">Đăng Nhập</button>
+    </section>
+
+    <section class="sect2"></section>
+    <section class="sect3">
+      <section class="chat-section">
+        
+        
+        
+        
+        
+        
+      </section>
+      <div class="action">
+        
+        <div class="scroll-down"><span class="material-symbols-outlined">south</span></div>
+      </div>
+    </section>
+    
+    <div class="bg"></div>
+    
+    
+    <section class="text-form">
+      <textarea class="message-input" placeholder="Tin Nhắn:" disabled></textarea>
+      <button class="send-btn" disabled><span class="material-symbols-outlined">send</span></button>
+    </section>
+    </section>
+    
+    <div></div>
+    <script type="module" src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script type="module" src="./js/chat.js"></script>
+  </body>
+</html>
