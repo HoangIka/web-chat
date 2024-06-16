@@ -8,7 +8,7 @@ const server1 = require('http').createServer(app);
 
 const io = require('socket.io')(server1,{
     cors:{
-        origin:["http://localhost:10000","https://localhost:10000","https://nhantintructuyen.onrender.com"],
+        origin:"*",
         methods:["GET","POST"]
     }
 });
