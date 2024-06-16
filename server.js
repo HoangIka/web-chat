@@ -102,7 +102,7 @@ app.post('/chat',(req,res)=>{
     const addFriend2 = db.getUser(data.friend);
     addFriend2.friend.push(data.me);
     
-    io.emit(`${data.friend}`,'new-friend',{username: data.friend})
+    io.emit(`${data.friend}`,'new-friend',{username: data.me})
     res.json({message:'',username: userdata.username})
     }else
     if(data.type==='find-name'){
