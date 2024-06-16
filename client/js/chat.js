@@ -280,7 +280,7 @@ socket.on(`${self_name}`,(type,obj)=>{
       
       const room_name = document.querySelector('div[data-room-name]')
       room_name.textContent=obj.username
-      
+      const left_sidebar = document.querySelector('.left-sidebar');
       left_sidebar.style.setProperty('transition','width .5s');
       left_sidebar.style.setProperty('width','.1px');
       setTimeout(e=>left_sidebar.style.removeProperty('transition'),500);
