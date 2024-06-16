@@ -100,7 +100,9 @@ document.querySelector('.list-add').onclick = function(e) {
             }
             const list = document.querySelector('.list-chat');
             list.appendChild(chat_nav_node);
-            
+            left_sidebar.style.setProperty('transition','width .5s');
+            left_sidebar.style.setProperty('width','.1px');
+            setTimeout(e=>left_sidebar.style.removeProperty('transition'),500);
             add_panel_node.remove()
           }
         }
