@@ -124,7 +124,7 @@ server1.listen(PORT,()=>{
     content: 'Website on! https://nhantintructuyen.onrender.com'
   });
 
-  const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL';
+  const webhookURL = 'https://discord.com/api/webhooks/1238299394059669636/e37aagfKIZn2h95P_o01c0L1wlQ1A7yNbs6-kZGAd1W8xj3g81F-P8fqiu0O0oOl43zo';
   const url = new URL(webhookURL);
   
   const options = {
