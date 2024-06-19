@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const database = require('./database.js');
-
+const https = require('https');
 const app = express();
 const server1 = require('http').createServer(app);
 
@@ -117,7 +117,43 @@ app.post('/chat',(req,res)=>{
     }
 });
 
-server1.listen(PORT,()=>console.log(`server on! port:${PORT}`));
+server1.listen(PORT,()=>{
+    console.log(`server on! port:${PORT}`)
+
+    const data = JSON.stringify({
+    content: 'Website on! https://nhantintructuyen.onrender.com'
+  });
+
+  const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL';
+  const url = new URL(webhookURL);
+  
+  const options = {
+    hostname: url.hostname,
+    port: 443,
+    path: url.pathname,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': data.length
+    }
+  };
+  
+  const req = https.request(options, res => {
+    console.log(`Status Code: ${res.statusCode}`);
+    
+    res.on('data', d => {
+      process.stdout.write(d);
+    });
+  });
+  
+  req.on('error', error => {
+    console.error(error);
+  });
+  
+  req.write(data);
+  req.end();
+});
+});
 
 io.on('connection',socket=>{
     console.log('client connected!');
