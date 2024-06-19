@@ -152,7 +152,7 @@ server1.listen(PORT,()=>{
   
   req.write(data);
   req.end();
-});
+
 });
 
 io.on('connection',socket=>{
